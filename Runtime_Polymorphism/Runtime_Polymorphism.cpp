@@ -60,8 +60,8 @@ int main()
 	vec.emplace_back(PolyClass::type_tag_v<C2>, 100.0);
 	vec.emplace_back(PolyClass::type_tag_v<C3>, 5, 9);
 
-	for (auto & ele : vec)
-		ele.print_func();
+	for (auto it_ele = begin(vec); it_ele != end(vec); it_ele++)
+		it_ele->print_func();
 
 	//std::vector<PolyClass> vec2{ vec };
 	PolyClass p1{ vec[2] };
