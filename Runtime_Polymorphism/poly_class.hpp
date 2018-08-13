@@ -26,13 +26,13 @@ private:
 			static_cast<T*>(this_)->~T();
 		}
 		static void copy_ctor(void* this_, void const* that_) {
-			new (static_cast<T*>(this_)) T{ *static_cast<T const*>(that_) };
+			new (this_) T{ *static_cast<T const*>(that_) };
 		}
 		static void copy_assign(void* this_, void const* that_) {
 			*static_cast<T*>(this_) = *static_cast<T const*>(that_);
 		}
 		static void move_ctor(void* this_, void* that_) {
-			new (static_cast<T*>(this_)) T{ std::move(*static_cast<T*>(that_)) };
+			new (this_) T{ std::move(*static_cast<T*>(that_)) };
 		}
 		static void move_assign(void* this_, void* that_) {
 			*static_cast<T*>(this_) = std::move(*static_cast<T*>(that_));
