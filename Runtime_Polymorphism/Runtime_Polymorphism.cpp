@@ -77,6 +77,7 @@ int main()
 
 	PolyClass p3{ vec[1] };
 	PolyClass p4{ std::move(p3) };
+	PolyClass p5{ p4 };
 
     return 0;
 }
